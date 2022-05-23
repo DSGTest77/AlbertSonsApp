@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Acronym View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AcronymViewController" customModule="AlbertsonsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search Acronym" translatesAutoresizingMaskIntoConstraints="NO" id="bog-jN-2A7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3zn-dJ-yxf"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ovs-qs-4by">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="acronymCell" rowHeight="51" id="Rrg-n5-Oob" customClass="AcronymCell" customModule="AlbertsonsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rrg-n5-Oob" id="c0c-Vf-cYT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6T-PH-4dO">
+                                                    <rect key="frame" x="12" y="11" width="390" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Z6T-PH-4dO" firstAttribute="top" secondItem="c0c-Vf-cYT" secondAttribute="top" constant="11" id="3mL-1C-cDi"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z6T-PH-4dO" secondAttribute="bottom" constant="11" id="5w8-e8-KFN"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z6T-PH-4dO" secondAttribute="trailing" constant="12" id="AJI-Ot-2jS"/>
+                                                <constraint firstItem="Z6T-PH-4dO" firstAttribute="leading" secondItem="c0c-Vf-cYT" secondAttribute="leading" constant="12" id="sPd-Nk-Ig9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="acronymLbl" destination="Z6T-PH-4dO" id="g3L-gR-0ax"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="AFR-2l-OAU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KIC-iJ-zVx"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hgI-IQ-c18">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bog-jN-2A7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Hf-4E-0EO"/>
+                            <constraint firstItem="ovs-qs-4by" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AJI-Ig-TCV"/>
+                            <constraint firstItem="ovs-qs-4by" firstAttribute="top" secondItem="bog-jN-2A7" secondAttribute="bottom" id="DvV-Wr-fVI"/>
+                            <constraint firstItem="ovs-qs-4by" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Jt5-AA-e7H"/>
+                            <constraint firstItem="bog-jN-2A7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LS6-eR-5Zg"/>
+                            <constraint firstItem="bog-jN-2A7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vhp-fS-tXJ"/>
+                            <constraint firstItem="ovs-qs-4by" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X2g-xl-hoO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="acronymSearchBar" destination="bog-jN-2A7" id="ymi-G7-Ped"/>
+                        <outlet property="acronymTableView" destination="ovs-qs-4by" id="4vz-or-fq2"/>
+                        <outlet property="activityIndicator" destination="hgI-IQ-c18" id="GRG-zM-oMp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
